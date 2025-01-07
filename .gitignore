@@ -1,0 +1,38 @@
+################################################################################
+# File types
+################################################################################
+# CMSIS generated schema files
+*.cbuild-idx.yml
+*.cbuild-set.yml
+*.cbuild.yml
+
+# LLVM generated configuration files
+*.clangd
+*.clang-format
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output files
+*.ilk
+*.map
+*.exp
+
+*.cprj
+
+# Python and Project Jupyter files
+*.pyc
+
+################################################################################
+# Directory types
+################################################################################
+# VCPKG make build output folders
+out/
+tmp/
+
+# Python and Project Jupyter temporary folders
+.ipynb_checkpoints/
+__pycache__/

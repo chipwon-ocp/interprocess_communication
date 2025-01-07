@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/2.6.0/tools/projmgr/schemas/clayer.schema.json
+
+layer:
+  groups:
+    - group: Entry
+      files:
+        - file: main.c
+
+  add-path:
+    - ./
+
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: ARM::CMSIS:OS Tick
+    - component: ARM::CMSIS:RTOS2:FreeRTOS
+    - component: ARM::CMSIS-Compiler:CORE
+    - component: ARM::CMSIS-Compiler:STDOUT:Custom
+    - component: ARM::Device:Startup&C Startup
+    - component: ARM::RTOS&FreeRTOS:Config&CMSIS RTOS2 
+    - component: ARM::RTOS&FreeRTOS:Core&Cortex-M 
+    - component: ARM::RTOS&FreeRTOS:Coroutines 
+    - component: ARM::RTOS&FreeRTOS:Event Groups 
+    - component: ARM::RTOS&FreeRTOS:Heap&Heap_4 
+    - component: ARM::RTOS&FreeRTOS:Message Buffer 
+    # - component: ARM::RTOS&FreeRTOS:Stream Buffer 
+    - component: ARM::RTOS&FreeRTOS:Timers 

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/2.6.0/tools/projmgr/schemas/csolution.schema.json
+
+solution:
+  created-for: cmsis-toolbox@2.6.0
+  cdefault:
+  compiler: GCC
+
+  packs:
+    - pack: ARM::CMSIS@6.1.0
+    - pack: ARM::V2M_MPS3_SSE_300_BSP@1.5.0
+    - pack: ARM::CMSIS-FreeRTOS@11.1.0
+    - pack: ARM::CMSIS-Compiler@2.1.0
+    - pack: AlifSemiconductor::Ensemble@1.3.0
+
+  target-types:
+    - type: avhseml
+      board: ARM::V2M-MPS3-SSE-300-FVP
+      device: ARM::SSE-300-MPS3
+      define:
+        - ETHOSU55
+        - CORSTONE300_FVP
+    - type: m55he
+      board: Alif Semiconductor::DevKit-E7
+      device: AE722F80F55D5LS:M55_HE
+      define:
+        - "CORE_M55_HE"
+    - type: m55hp
+      board: Alif Semiconductor::DevKit-E7
+      device: AE722F80F55D5LS:M55_HP
+      define:
+        - "CORE_M55_HP"
+
+  build-types:
+    - type: debug
+      optimize: debug
+      debug: on
+      define:
+        - _DEBUG
+    - type: release
+      optimize: speed
+      debug: off
+
+  define:
+    - UNICODE
+    - _UNICODE
+
+  projects:
+    - project: ./turtle/turtle.cproject.yml
+      for-context:
+        - +avhseml
+        - +m55he
+    - project: ./rabbit/rabbit.cproject.yml
+      not-for-context:
+        - +m55he

@@ -1,0 +1,83 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Board Debug (Cortex-Debug)",
+            "cwd": "${workspaceFolder}",
+            "executable": "${command:cmsis-csolution.getBinaryFile}",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "parsed",
+            "device": "${command:cmsis-csolution.getDeviceName}_${command:cmsis-csolution.getProcessorName}",
+            "interface": "jtag",
+            "servertype": "jlink",
+            "serverArgs": ["-JLinkDevicesXmlPath", "${workspaceFolder}/.alif/JLinkDevices.xml"],
+            "preLaunchCommands": [
+                "monitor speed 15000"
+            ],
+            "postLaunchCommands": [
+                "set $sp = __Vectors[0]",
+                "set $pc = __Vectors[1]",
+                "set *0xe000ed08 = __Vectors"
+            ]
+        },
+        {
+            "name": "Board Multicore Debug (Cortex-Debug)",
+            "cwd": "${workspaceFolder}",
+            "executable": "./out/rabbit/m55hp/debug/rabbit.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "parsed",
+            "device": "AE722F80F55D5_HP",
+            "interface": "jtag",
+            "servertype": "jlink",
+            "preLaunchCommands": [
+                "monitor speed 15000"
+            ],
+            "postLaunchCommands": [
+                "set $sp = __Vectors[0]",
+                "set $pc = __Vectors[1]",
+                "set *0xe000ed08 = __Vectors"
+            ],
+            "chainedConfigurations": {
+                "enabled": true,
+                "waitOnEvent": "postInit",
+                "detached": true,
+                "lifecycleManagedByParent": true,
+                "launches": [
+                    {
+                        "name": "(secondary) Board Multicore Debug",
+                        "folder": "${workspaceFolder}"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "(secondary) Board Multicore Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "./out/turtle/m55he/debug/turtle.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "parsed",
+            "device": "AE722F80F55D5_HE",
+            "interface": "jtag",
+            "servertype": "jlink",
+            "presentation": {
+                "hidden": true,
+                "group": "",
+                "order": 1
+            },
+            "preLaunchCommands": [
+                "monitor speed 15000"
+            ],
+            "postLaunchCommands": [
+                "set $sp = __Vectors[0]",
+                "set $pc = __Vectors[1]",
+                "set *0xe000ed08 = __Vectors"
+            ]
+        }
+    ]
+}

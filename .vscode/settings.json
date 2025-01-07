@@ -1,0 +1,36 @@
+{
+    "cortex-debug.variableUseNaturalFormat": false,
+    "cmake.options.statusBarVisibility": "visible",
+    "cmsis-csolution.actions": [
+        {
+            "path": "kickoff.csolution.yml",
+            "target": "m55he",
+            "config": {
+                "debug": "Board Multicore Debug (Cortex-Debug)"
+            },
+            "projects": [
+                {
+                    "path": "turtle/turtle.cproject.yml",
+                    "config": {
+                        "debug": "Board Multicore Debug (Cortex-Debug)"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "kickoff.csolution.yml",
+            "target": "m55hp",
+            "config": {
+                "debug": "Board Multicore Debug (Cortex-Debug)"
+            },
+            "projects": [
+                {
+                    "path": "rabbit/rabbit.cproject.yml",
+                    "config": {
+                        "debug": "Board Multicore Debug (Cortex-Debug)"
+                    }
+                }
+            ]
+        }
+    ]
+}

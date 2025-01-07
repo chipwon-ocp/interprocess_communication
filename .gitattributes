@@ -1,0 +1,104 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Generic files
+*.txt text eol=lf
+*.md text eol=lf
+*.zip binary
+*.7z binary
+
+# Generic cxecutable files
+*.exe binary
+*.elf binary
+*.com binary
+*.out binary
+*.app binary
+
+# Library files
+*.lib binary
+*.LIB binary
+*.a binary
+*.so binary
+*.dll binary
+*.DLL binary
+
+# Git files
+.gitattributes text eol=lf
+.gitignore text eol=lf
+.gitmodules text eol=lf
+.gitkeep text eol=lf
+
+# Binary files
+*.bin binary
+*.BIN binary
+
+# Hypertext/Web files
+*.html text eol=lf
+*.HTML text eol=lf
+*.css text eol=lf
+*.htm text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+
+# Image files
+*.gif binary
+*.png binary
+*.jpg binary
+*.svg binary
+*.bmp binary
+*.ico binary
+*.icns binary
+
+# Java files
+*.java text eol=lf
+.classpath text eol=lf
+*.class binary
+*.jar binary
+
+# Eclipse project files
+.project text eol=lf
+.cproject text eol=lf
+
+# PDE files
+*.properties text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.MF text eol=lf
+.options text eol=lf
+*.xsd text eol=lf
+*.exsd text eol=lf
+*.target text eol=lf
+*.product text eol=lf
+
+# C/CPP files
+*.asm text eol=lf
+*.c text eol=lf
+*.cc text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.s text eol=lf
+*.S text eol=lf
+
+# Python files
+*.py text eol=lf
+*.ipynb text eol=lf
+
+# Numpy files
+*.npy binary
+*.npz binary
+
+# Preference settings
+*.prefs text eol=lf
+
+# Misc.
+*.yaml text eol=lf
+*.inf text eol=lf
+*.ini text eol=lf
+*.command text eol=lf
+*.sh text eol=lf
+*.bat text eol=lf
+*.ld text eol=lf
+*.sct text eol=lf
+*.launch text eol=lf
+LICENSE text eol=lf
